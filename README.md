@@ -8,17 +8,17 @@
 
 ## Reproduction
 
-Create an Unlocked Package first:
+Create an unlocked package first:
 
 ```console
-sfdx package create -t Unlocked --no-namespace --org-dependent --path force-app -n "2GP Profile Filtering"
+sfdx package create -t Unlocked --no-namespace --path force-app -n "2GP Profile Filtering"
 ```
 
 Now create a package version:
 
 ```console
 export SF_LOG_LEVEL="debug"
-sfdx package version create -p force-app
+sfdx package version create -x -d force-app -w 20
 ```
 
 See output in `~/.sf/sf.log`:
